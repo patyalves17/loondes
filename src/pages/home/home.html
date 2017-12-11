@@ -1,0 +1,35 @@
+<ion-header >
+  <ion-navbar  >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   
+
+    <ion-list>
+      
+        <ion-item *ngFor="let look of LookList$ | async" >
+          <ion-thumbnail item-start>
+              <img src="assets/imgs/img-icon.png"/>
+          </ion-thumbnail>
+          <h2>{{look.brands}}</h2>
+          <p>{{look.description}}</p>
+          <button ion-button clear item-end navPush="EditLook" [navParams]="{look:look}" >View</button>
+        </ion-item>
+       
+      </ion-list>
+
+    
+
+
+  <ion-fab right bottom >
+    <button ion-fab mini 
+    navPush="AddLook"
+    ><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>
