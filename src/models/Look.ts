@@ -2,6 +2,7 @@ export class Look {
     key: string;
     brands: string;
     description: string;
+    image: string;
 
 
     constructor(){ }

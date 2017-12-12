@@ -15,6 +15,17 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public lookProvider: LookProvider,) {
     // this.looks = [];
+    // this.LookList$ = this.lookProvider
+    // .getLookByBrands('aaaa') // gets DB list
+    // .snapshotChanges() // key and value
+    // .map(
+    //   changes => {
+    //     return changes.map(c => ({
+    //       key: c.payload.key, ... c.payload.val()
+    //     }))
+    //   }
+    // )
+
     this.LookList$ = this.lookProvider
     .getLookList() // gets DB list
     .snapshotChanges() // key and value

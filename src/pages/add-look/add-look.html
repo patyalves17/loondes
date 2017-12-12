@@ -4,6 +4,8 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
+
 <ion-header>
 
   <ion-navbar  >
@@ -16,15 +18,12 @@
 <ion-content padding>
 
     <ion-card>
-        <ion-card-content>
-          <img src="assets/imgs/img-icon.png" />
-          <p>Upload an image</p>
+        <ion-card-content (click)="getPhoto('picture')">
+          <img src="assets/imgs/img-icon.png"  *ngIf="!currentPhoto"/>
+          <img [src]="look.image" *ngIf="look.image"  />
+          <p>Take a Picture</p>
         </ion-card-content>
-    
-      <!--  <ion-item>
-          <button ion-button clear item-start>Like</button>
-          <button ion-button clear item-end>Comment</button>
-        </ion-item>-->
+  
       </ion-card>
   
       <ion-list>
@@ -38,6 +37,7 @@
               <ion-label stacked>Description</ion-label>
               <ion-textarea type="text"[(ngModel)]="look.description"></ion-textarea>
             </ion-item>
+           
           
           </ion-list>
   

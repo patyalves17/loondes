@@ -11,10 +11,15 @@ import { AngularFireModule} from 'angularfire2'
 import { AngularFireDatabaseModule} from 'angularfire2/database'
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { LookProvider } from '../providers/look-provider';
+import { TabsPage } from '../pages/tabs/tabs';
+import { HomePage } from '../pages/home/home';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    TabsPage,
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -24,11 +29,14 @@ import { LookProvider } from '../providers/look-provider';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    TabsPage,
+    HomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LookProvider
   ]

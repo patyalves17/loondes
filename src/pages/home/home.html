@@ -14,7 +14,8 @@
       
         <ion-item *ngFor="let look of LookList$ | async" >
           <ion-thumbnail item-start>
-              <img src="assets/imgs/img-icon.png"/>
+              <img [src]="look.image" *ngIf="look.image "/>
+              <img src="assets/imgs/img-icon.png"  *ngIf="!look.image" />
           </ion-thumbnail>
           <h2>{{look.brands}}</h2>
           <p>{{look.description}}</p>
