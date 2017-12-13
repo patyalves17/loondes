@@ -1,6 +1,12 @@
 export class Look {
     key: string;
-    brands: string;
+    date: string;
+    place: string;
+    name: string;
+    style: string;
+    author: string;
+    products: string;
+    colors: string;
     description: string;
     image: string;
 

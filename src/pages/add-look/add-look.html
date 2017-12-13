@@ -20,16 +20,44 @@
   
       <ion-list>
           
-            <ion-item>
-              <ion-label stacked>Brands</ion-label>
-              <ion-textarea type="text" [(ngModel)]="look.brands"></ion-textarea>
+          <ion-item>
+              <ion-label stacked>Date:</ion-label>
+              <ion-input type="date"  [(ngModel)]="look.date"></ion-input>
+            </ion-item>
+          
+          <ion-item>
+              <ion-label stacked>Place:</ion-label>
+              <ion-input type="text" [(ngModel)]="look.place"></ion-input>
             </ion-item>
           
             <ion-item>
-              <ion-label stacked>Description</ion-label>
-              <ion-textarea type="text"[(ngModel)]="look.description"></ion-textarea>
+              <ion-label stacked>Look name:</ion-label>
+              <ion-input type="text" [(ngModel)]="look.name"></ion-input>
             </ion-item>
            
+          <ion-item>
+              <ion-label stacked>Style:</ion-label>
+              <ion-input type="text" [(ngModel)]="look.style"></ion-input>
+            </ion-item>
+          
+          <ion-item>
+              <ion-label stacked>Author:</ion-label>
+              <ion-input type="text" [(ngModel)]="look.author"></ion-input>
+            </ion-item>
+          
+          <ion-item>
+              <ion-label stacked>Products:</ion-label>
+              <ion-input type="text" [(ngModel)]="look.products"></ion-input>
+            </ion-item>
+           <ion-item>
+              <ion-label stacked>Colors:</ion-label>
+              <ion-input type="text" [(ngModel)]="look.colors"></ion-input>
+            </ion-item>
+          
+           <ion-item>
+              <ion-label stacked>Description:</ion-label>
+              <ion-textarea type="text" [(ngModel)]="look.description"></ion-textarea>
+            </ion-item>
           
           </ion-list>
   
