@@ -9,6 +9,7 @@ export class Look {
     colors: string;
     description: string;
     image: string;
+    uId:string;
 
 
     constructor(){ }

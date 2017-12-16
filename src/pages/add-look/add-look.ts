@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, IonicPage } from 'ionic-angular';
+import { NavController, NavParams, IonicPage, App } from 'ionic-angular';
 import { Look } from '../../models/Look';
 import { LookProvider } from '../../providers/look-provider';
 import { ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { TabsPage } from '../tabs/tabs';
+import { AuthService } from '../../providers/auth-service';
+import { AngularFireAuth } from 'angularfire2/auth'
 
 
 
@@ -20,9 +23,19 @@ export class AddLook {
     public navParams: NavParams,
     public lookProvider: LookProvider,
     public toastCtrl: ToastController,
-    private camera: Camera) {
+    private camera: Camera,
+    public app: App,
+    private afAuth: AngularFireAuth) {
     this.look = new Look();
     this.getPhoto();
+
+
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.look.uId=user.uid;
+      };
+    });
+    
   }
 
   ionViewDidLoad() {
@@ -51,17 +64,11 @@ export class AddLook {
         });
       }
 
-
-
-
-
   salvar() {
-    console.log("salvar");
-    console.log(this.look);
-    //this.lookProvider.addLook(this.look);
+
     this.lookProvider.addLook(this.look).then(ref => {
       this.presentToast();
-     // this.navCtrl.setRoot("HomePage");
+      this.app.getRootNav().setRoot(TabsPage);
     }, function(error){
       console.log(error);
     });

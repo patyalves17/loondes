@@ -21,8 +21,8 @@ export class LookProvider {
   getLookList(){
       return this.lookList;
   }
-  getLookByBrands(brand: string){
-      let looks = this.db.list('/look-list',ref => ref.orderByChild('brands').equalTo(brand));
+  getLookByUser(uID: string){
+      let looks = this.db.list('/look-list',ref => ref.orderByChild('uId').equalTo(uID));
       console.log(looks);
     return looks;
 }
