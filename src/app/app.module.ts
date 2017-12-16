@@ -9,11 +9,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AngularFireModule} from 'angularfire2'
 import { AngularFireDatabaseModule} from 'angularfire2/database'
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { LookProvider } from '../providers/look-provider';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { Camera } from '@ionic-native/camera';
+
+import { AuthService } from '../providers/auth-service';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -24,8 +29,10 @@ import { Camera } from '@ionic-native/camera';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,7 +45,8 @@ import { Camera } from '@ionic-native/camera';
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LookProvider
+    LookProvider,
+    AuthService
   ]
 })
 export class AppModule {}

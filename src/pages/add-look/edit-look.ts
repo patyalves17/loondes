@@ -23,6 +23,7 @@ export class EditLook {
     console.log('ionViewDidLoad EditLook');
     // console.log(this.navParams.get("look"));
      this.look = this.navParams.get("look");
+     console.log(this.navParams.get("look"));
   }
   salvar(){
     console.log("salvar");

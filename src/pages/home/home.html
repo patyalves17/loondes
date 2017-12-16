@@ -19,6 +19,7 @@
           </ion-thumbnail>
           <h2>{{look.brands}}</h2>
           <p>{{look.description}}</p>
+        <!--  <button ion-button clear item-end (click)="editLook(look)">View</button>-->
           <button ion-button clear item-end navPush="EditLook" [navParams]="{look:look}" >View</button>
         </ion-item>
        

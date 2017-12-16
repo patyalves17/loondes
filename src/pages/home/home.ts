@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, IonicPage, Nav } from 'ionic-angular';
 import { Look } from '../../models/Look';
 import { LookProvider } from '../../providers/look-provider';
 import { Observable } from 'rxjs/Observable';
+import { EditLook } from '../add-look/edit-look';
 
 @IonicPage()
 @Component({
@@ -10,10 +11,11 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  @ViewChild(Nav) nav: Nav;
   LookList$: Observable<Look[]>;
   look: Look;
 
-  constructor(public navCtrl: NavController, public lookProvider: LookProvider,) {
+  constructor(public navCtrl: NavController, public lookProvider: LookProvider) {
     // this.looks = [];
     // this.LookList$ = this.lookProvider
     // .getLookByBrands('aaaa') // gets DB list
@@ -36,6 +38,14 @@ export class HomePage {
         }))
       }
     )
+
+  }
+
+
+  editLook(look){
+    console.log(look);
+    this.navCtrl.setRoot("EditLook",{look: look});
+
 
   }
   
