@@ -18,15 +18,26 @@
                 <img [src]="look.image" *ngIf="look.image "/>
                 <img src="assets/imgs/img-icon.png"  *ngIf="!look.image" />
             </ion-thumbnail>
-            <h2>{{look.brands}}</h2>
-            <p>{{look.description}}</p>
+            <h2>{{look.name }}</h2>
+          <!--  <p>{{look.description}}</p>-->
           <!--  <button ion-button clear item-end (click)="editLook(look)">View</button>-->
            <!-- <button ion-button clear item-end navPush="EditLook" [navParams]="{look:look}" >View</button>-->
           </ion-item>
 
           <ion-item-options side="right">
-              <button ion-button clear item-end navPush="EditLook" [navParams]="{look:look}" >View</button>
-              <button ion-button clear item-end  >Delete</button>
+             
+              <button ion-button navPush="EditLook" [navParams]="{look:look}">
+                  <ion-icon name="md-create"></ion-icon>
+                  Edit
+                </button>
+              <button ion-button color="secondary" (click)="shareLook(look)">
+                  <ion-icon name="md-share"></ion-icon>
+                  Share
+                </button>
+                <button ion-button color="danger" (click)="remove(look)">
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                  </button>
 
           </ion-item-options>
       </ion-item-sliding>
@@ -34,11 +45,11 @@
 
     
 
-
+<!--
   <ion-fab right bottom >
     <button ion-fab mini 
     navPush="AddLook"
     ><ion-icon name="add"></ion-icon></button>
-  </ion-fab>
+  </ion-fab>-->
 
 </ion-content>

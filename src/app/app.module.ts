@@ -16,6 +16,7 @@ import { LookProvider } from '../providers/look-provider';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { Camera } from '@ionic-native/camera';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 import { AuthService } from '../providers/auth-service';
 import { IonicStorageModule } from '@ionic/storage';
@@ -44,6 +45,7 @@ import { IonicStorageModule } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     Camera,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LookProvider,
     AuthService

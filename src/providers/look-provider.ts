@@ -34,5 +34,8 @@ export class LookProvider {
   editLook(look: Look){
       return this.lookList.update(look.key, look);
   }
+  deleteLook(key: string){
+    return this.lookList.remove(key);
+}
 
 }

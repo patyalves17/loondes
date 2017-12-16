@@ -37,11 +37,8 @@ export class MyApp {
       if (user) {
         console.log("ja esta logado");
         this.app.getRootNav().setRoot(TabsPage);
-        // this.rootPage = "TabsPage";
-        // this.navCtrl.setRoot(TabsPage);
       } else {
         console.log("Faça Login");
-        // this.rootPage = "Login";
       }
     });
 
