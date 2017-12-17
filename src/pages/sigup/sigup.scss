@@ -1,3 +1,23 @@
 page-sigup {
 
+    .item-md {
+        color: #fff;
+        background-color:transparent; 
+    }
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+        color: #fff;
+    }
+
+    button {
+        background-color:#fff!important;
+        color: #e94154!important;
+    }
+    h2{
+        color: #fff;
+        text-align: center;
+    }
+
+    .back-button-md {
+        background: #e94154!important;
+    }
 }

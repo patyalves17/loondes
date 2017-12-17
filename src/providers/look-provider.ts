@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Look } from '../models/Look';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { LoadingController } from 'ionic-angular';
 
 /*
   Generated class for the LookProvider provider.

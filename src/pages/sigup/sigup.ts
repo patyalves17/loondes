@@ -53,13 +53,13 @@ export class Sigup {
         .catch((error: any) => {
           console.log(error);
           if (error.code  == 'auth/email-already-in-use') {
-            toast.setMessage('O e-mail digitado já está em uso.');
+            toast.setMessage('E-mail is already in use.');
           } else if (error.code  == 'auth/invalid-email') {
-            toast.setMessage('O e-mail digitado não é valido.');
+            toast.setMessage('E-mail is not valid.');
           } else if (error.code  == 'auth/operation-not-allowed') {
-            toast.setMessage('Não está habilitado criar usuários.');
+            toast.setMessage('Operation not allowed.');
           } else if (error.code  == 'auth/weak-password') {
-            toast.setMessage('A senha digitada é muito fraca.');
+            toast.setMessage('Weak password.');
           }
           toast.present();
         });

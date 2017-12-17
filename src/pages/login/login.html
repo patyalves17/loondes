@@ -11,32 +11,33 @@
 
   <form #form="ngForm" novalidate>
     <ion-list>
-        <img src="assets/imgs/SbcD0V5iRM2afvEaHDkx_hilt-logo.png" 
+        <img src="assets/imgs/iconTransparent.png" 
         style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;"
         />
       <ion-item>
         <ion-label stacked>E-mail</ion-label>
-        <ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+        <ion-input type="email" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
       </ion-item>
       <ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-danger">
-        O campo é obrigatório
+       This field is required.
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Senha</ion-label>
+        <ion-label stacked>Password</ion-label>
         <ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
       </ion-item>
       <ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-danger">
-        O campo é obrigatório
+        This field is required.
       </ion-item>
 
     </ion-list>
       <div padding>
-          <button ion-button block  [disabled]="!form.form.valid" (click)="login()">
+          <button ion-button full large  [disabled]="!form.form.valid" (click)="login()">
               Login
             </button>
 
-        <button ion-button  block color="white" (click)="createAccount()">Cadastrar</button>
+        <button ion-button  full large color="white" (click)="createAccount()">Signup</button>
+        
       </div>
       </form>
 
