@@ -11,7 +11,7 @@
 <ion-content padding>
 
 
-    <img [src]="look.image" *ngIf="look.image"  lookImage />
+    <img [src]="look.image" *ngIf="look.image"  lookImage (click)="getPhoto()"/>
 
     <ion-card (click)="getPhoto()" *ngIf="!look.image ">
         <ion-card-content (click)="getPhoto('picture')">
