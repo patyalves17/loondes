@@ -1,5 +1,5 @@
-<ion-header >
-  <ion-navbar  >
+<ion-header>
+  <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,44 +8,74 @@
 </ion-header>
 
 <ion-content padding>
-   
 
-    <ion-list>
-      
-      <ion-item-sliding *ngFor="let look of LookList$ | async">
-          <ion-item  >
-            <ion-thumbnail item-start>
-                <img [src]="look.image" *ngIf="look.image "/>
-                <img src="assets/imgs/img-icon.png"  *ngIf="!look.image" />
-            </ion-thumbnail>
-            <h2>{{look.name }}</h2>
-          <!--  <p>{{look.description}}</p>-->
-          <!--  <button ion-button clear item-end (click)="editLook(look)">View</button>-->
-           <!-- <button ion-button clear item-end navPush="EditLook" [navParams]="{look:look}" >View</button>-->
-          </ion-item>
 
-          <ion-item-options side="right">
-             
-              <button ion-button navPush="EditLook" [navParams]="{look:look}">
-                  <ion-icon name="md-create"></ion-icon>
-                  Edit
-                </button>
-              <button ion-button color="secondary" (click)="shareLook(look)">
-                  <ion-icon name="md-share"></ion-icon>
-                  Share
-                </button>
-                <button ion-button color="danger" (click)="remove(look)">
-                    <ion-icon name="trash"></ion-icon>
-                    Delete
-                  </button>
 
-          </ion-item-options>
-      </ion-item-sliding>
-      </ion-list>
+  <ion-card *ngFor="let look of LookList$ | async" lookCard>
+    <ion-item>
 
-    
+      <img [src]="look.image" />
+      <ion-fab right top>
+        <button ion-fab mini >
+          <ion-icon name="pin"></ion-icon>
+        </button>
+        <ion-fab-list>
+          <button ion-fab navPush="EditLook" [navParams]="{look:look}">
+            <ion-icon name="md-create"></ion-icon>
+          </button>
+          <button ion-fab (click)="shareLook(look)">
+            <ion-icon name="md-share"></ion-icon>
+          </button>
+          <button ion-fab (click)="remove(look)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-fab-list>
+      </ion-fab>
 
-<!--
+
+      <h2> {{look.name }}</h2>
+    </ion-item>
+
+  </ion-card>
+
+
+
+
+
+
+  <!-- 
+      <ion-list>
+        <ion-item-sliding *ngFor="let look of LookList$ | async">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img [src]="look.image" *ngIf="look.image " />
+          <img src="assets/imgs/img-icon.png" *ngIf="!look.image" />
+        </ion-thumbnail>
+        <h2>{{look.name }}</h2>
+      </ion-item>
+
+      <ion-item-options side="right">
+
+        <button ion-button navPush="EditLook" [navParams]="{look:look}">
+          <ion-icon name="md-create"></ion-icon>
+          Edit
+        </button>
+        <button ion-button color="secondary" (click)="shareLook(look)">
+          <ion-icon name="md-share"></ion-icon>
+          Share
+        </button>
+        <button ion-button color="danger" (click)="remove(look)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>-->
+
+
+
+  <!--
   <ion-fab right bottom >
     <button ion-fab mini 
     navPush="AddLook"

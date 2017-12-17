@@ -10,17 +10,23 @@
 
 <ion-content padding>
 
-    <ion-card (click)="getPhoto()">
+
+    <img [src]="look.image" *ngIf="look.image"  lookImage />
+
+    <ion-card (click)="getPhoto()" *ngIf="!look.image ">
         <ion-card-content (click)="getPhoto('picture')">
-          <img src="assets/imgs/img-icon.png"  *ngIf="!currentPhoto"/>
-          <img [src]="look.image" *ngIf="look.image"  />
+          <img src="assets/imgs/img-icon.png"  />
           <p>Take a Picture</p>
         </ion-card-content>
   
       </ion-card>
   
       <ion-list>
-          
+          <ion-item>
+              <ion-label stacked>Look name:</ion-label>
+              <ion-input type="text" [(ngModel)]="look.name"></ion-input>
+            </ion-item>
+
           <ion-item>
               <ion-label stacked>Date:</ion-label>
               <ion-input type="date"  [(ngModel)]="look.date"></ion-input>
@@ -30,12 +36,7 @@
               <ion-label stacked>Place:</ion-label>
               <ion-input type="text" [(ngModel)]="look.place"></ion-input>
             </ion-item>
-          
-            <ion-item>
-              <ion-label stacked>Look name:</ion-label>
-              <ion-input type="text" [(ngModel)]="look.name"></ion-input>
-            </ion-item>
-           
+            
           <ion-item>
               <ion-label stacked>Style:</ion-label>
               <ion-input type="text" [(ngModel)]="look.style"></ion-input>
