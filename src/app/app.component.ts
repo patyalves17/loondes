@@ -30,7 +30,8 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Home', component: TabsPage }
+      { title: 'Home', component: TabsPage },
+      { title: 'About', component: "About" }
     ];
 
     afAuth.authState.subscribe(user => {

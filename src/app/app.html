@@ -1,11 +1,13 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar  color="secondary">
-      <ion-title>Menu</ion-title>
+    <ion-toolbar  color="hilt">
+      <ion-title>HILT</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
+      <img src="assets/imgs/SbcD0V5iRM2afvEaHDkx_hilt-logo.png" 
+      style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;"/>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
@@ -20,4 +22,4 @@
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>
